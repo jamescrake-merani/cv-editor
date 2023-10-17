@@ -1,7 +1,10 @@
-(ns cv-editor.main)
+(ns cv-editor.main
+  [:require [reagent.core :as r]
+   [reagent.dom :as rd]])
 
 (defn base []
-  [:p "Hello World!"])
+  [:div
+   [:p "Hello World!"]])
 
 (defn render
   []
