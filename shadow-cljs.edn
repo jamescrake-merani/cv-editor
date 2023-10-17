@@ -1,0 +1,25 @@
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[reagent "1.2.0"]
+  [com.teknql/shadow-cljs-tailwind-jit "1.0.0"]]
+
+ :dev-http {8000 "out/"}
+ :builds
+ {:app {
+        :dev
+        {:build-hooks
+         [(teknql.tailwind/start-watch!)]}
+        :release
+        {:build-hooks
+         [(teknql.tailwind/compile-release!)]}
+        :output-dir "out/"
+        :tailwind/output "out/styles.css"
+        :tailwind/files
+        {:base-path "."
+         :tailwind.css "styles.css"}
+        :asset-path "."
+        :target :browser
+        :modules {:main {:init-fn cv-editor.main/render}}}}
+ }
