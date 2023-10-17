@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "shadow-cljs": "^2.25.8"
+    "daisyui": "^3.9.3",
+    "shadow-cljs": "^2.25.8",
+    "tailwindcss": "^3.3.3"
   }
 }
