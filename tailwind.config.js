@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["src/cv-editor/main.cljs"],
+  content: ["src/cv_editor/main.cljs"],
   theme: {
     extend: {},
   },
