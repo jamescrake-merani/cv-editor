@@ -6,6 +6,7 @@
   [com.teknql/shadow-cljs-tailwind-jit "1.0.0"]]
 
  :dev-http {8000 "out/"}
+
  :builds
  {:app {
         :dev
