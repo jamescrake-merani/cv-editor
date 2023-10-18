@@ -2,7 +2,7 @@
   [:require [reagent.core :as r]])
 
 (def field-component-map
-  {:full-name (cons full-name-view full-name-editor)})
+  {:full-name [full-name-view full-name-editor]})
 
 (defn full-name-view
   [value callback]
