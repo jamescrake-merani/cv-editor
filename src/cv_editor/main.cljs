@@ -1,6 +1,7 @@
 (ns cv-editor.main
   [:require [reagent.core :as r]
-   [reagent.dom :as rd]])
+   [reagent.dom :as rd]
+   [cv-editor.fields :as fields]])
 
 (def initial-cv
   {:full-name ""
@@ -15,9 +16,12 @@
         save-callback
         (fn [new-value]
           (swap! current-cv #(assoc current-cv field new-value)))
-        edit-toggle-callback (fn [] (swap! editing? #(not %)))]
-    [:p "Hello world"])
-  )
+        edit-toggle-callback (fn [] (swap! editing? #(not %)))
+        components (get fields/field-component-map field)
+        value (get @current-cv field)]
+    (if editing?
+      ((second components) value save-callback)
+      ((first components) value edit-toggle-callback))))
 
 (defn base []
   [:div
