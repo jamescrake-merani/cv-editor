@@ -1,9 +1,6 @@
 (ns cv-editor.fields
   [:require [reagent.core :as r]])
 
-(def field-component-map
-  {:full-name [full-name-view full-name-editor]})
-
 (defn full-name-view
   [value callback]
   [:div
@@ -18,3 +15,6 @@
        [:p "Full Name"]
        [:input {:type "text"}]
        [:button {:on-click callback} "Save"]])))
+
+(def field-component-map
+  {:full-name [full-name-view full-name-editor]})
