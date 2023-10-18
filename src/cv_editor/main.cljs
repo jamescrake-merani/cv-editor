@@ -9,6 +9,16 @@
 (def current-cv
   (r/atom initial-cv))
 
+(defn field-editor
+  [field]
+  (let [editing? (r/atom false)
+        save-callback
+        (fn [new-value]
+          (swap! current-cv #(assoc current-cv field new-value)))
+        edit-toggle-callback (fn [] (swap! editing? #(not %)))]
+    [:p "Hello world"])
+  )
+
 (defn base []
   [:div
    [:p "Hello World!"]])
